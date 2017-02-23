@@ -1,10 +1,13 @@
 package com.fcchyd.todoli;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 
 public class UIActivity extends AppCompatActivity {
@@ -23,12 +26,24 @@ public class UIActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                createNewTask();
             }
         });
 
         TaskCounter(undoneTaskCount);
+    }
+
+    protected void createNewTask(){
+        AlertDialog.Builder newTaskBuilder = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        newTaskBuilder.setView(inflater.inflate(R.layout.add_todo,null));
+
+        // create alert dialog
+        AlertDialog alertDialog = newTaskBuilder.create();
+
+        // show it
+        alertDialog.show();
     }
 
     protected void TaskCounter(int undoneTaskCount){
