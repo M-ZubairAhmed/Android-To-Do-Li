@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryText"
+    android:paddingBottom="@dimen/row_padding_top"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/row_padding_top">
+
+    <CheckBox
+        android:id="@+id/text_todo_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@id/row_todo_delete"
+        android:textColor="#f5f5f5"
+        tools:hint="Row of Single To do item" />
+
+    <Button
+        android:id="@+id/row_todo_delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:background="@drawable/delete_icon_48"
+        android:backgroundTint="@color/colorSecondaryText"
+        android:elevation="0dp" />
+
+</RelativeLayout>
