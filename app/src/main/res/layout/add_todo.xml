@@ -2,22 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
     <TextView
-        android:layout_width="match_parent"
         android:id="@+id/alertdia_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Add a new task"/>
+        android:paddingTop="@dimen/alert_dialog_padmar"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp"
+        android:textAlignment="viewStart"
+        android:text="@string/alertdialog_title"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_below="@+id/alertdia_title"
         android:id="@+id/alertdia_newtask_edittextxml"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_below="@+id/alertdia_newtask_edittextxml"
-        android:id="@+id/alertdia_submit_buttonxml"
         android:layout_width="match_parent"
+        android:inputType="textMultiLine"
+        android:hint="@string/alertdialog_hint"
+        android:layout_marginLeft="@dimen/alert_dialog_padmar"
+        android:layout_marginRight="@dimen/alert_dialog_padmar"
+        android:paddingEnd="@dimen/alert_dialog_padmar"
+        android:paddingStart="@dimen/alert_dialog_padmar"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_below="@+id/alertdia_title"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@+id/alertdia_newtask_edittextxml"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorWhite"
+        android:id="@+id/alertdia_submit_buttonxml"
+        android:padding="@dimen/alert_dialog_padmar"
+        android:text="@string/alertdialog_add"
         android:layout_height="wrap_content"
-        android:text="Add"/>
+        android:textColor="@color/colorAccent" />
 </RelativeLayout>

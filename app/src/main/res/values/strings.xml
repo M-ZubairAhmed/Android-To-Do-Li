@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ToDo Li</string>
     <string name="title_activity_ui">UIActivity</string>
+    <string name="alertdialog_add">ADD</string>
+    <string name="alertdialog_title">Add a new task</string>
+    <string name="alertdialog_hint">write here</string>
 </resources>
