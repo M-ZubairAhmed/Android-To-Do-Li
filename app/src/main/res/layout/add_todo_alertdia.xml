@@ -3,38 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+
     <TextView
         android:id="@+id/alertdia_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/alert_dialog_padmar"
-        android:paddingStart="24dp"
         android:paddingEnd="24dp"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="18sp"
+        android:paddingStart="24dp"
+        android:paddingTop="@dimen/alert_dialog_padmar"
+        android:text="@string/alertdialog_title"
         android:textAlignment="viewStart"
-        android:text="@string/alertdialog_title"/>
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/alertdia_newtask_edittextxml"
         android:layout_width="match_parent"
-        android:inputType="textMultiLine"
-        android:hint="@string/alertdialog_hint"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alertdia_title"
         android:layout_marginLeft="@dimen/alert_dialog_padmar"
         android:layout_marginRight="@dimen/alert_dialog_padmar"
-        android:paddingEnd="@dimen/alert_dialog_padmar"
-        android:paddingStart="@dimen/alert_dialog_padmar"
-        android:textColor="@color/colorSecondaryText"
-        android:layout_below="@+id/alertdia_title"
-        android:layout_height="wrap_content" />
+        android:hint="@string/alertdialog_hint"
+        android:inputType="textMultiLine"
+        android:textColor="@color/colorSecondaryText" />
 
-    <TextView
-        android:layout_below="@+id/alertdia_newtask_edittextxml"
-        android:layout_width="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="@color/colorWhite"
+  <!--  <TextView
         android:id="@+id/alertdia_submit_buttonxml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/alertdia_newtask_edittextxml"
+        android:background="@color/colorWhite"
         android:padding="@dimen/alert_dialog_padmar"
         android:text="@string/alertdialog_add"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent" />-->
 </RelativeLayout>
