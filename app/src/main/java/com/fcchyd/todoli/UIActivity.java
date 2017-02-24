@@ -1,7 +1,5 @@
 package com.fcchyd.todoli;
 
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,14 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class UIActivity extends AppCompatActivity {
 
     int undoneTaskCount = 5;
     protected String newtask_String;
-    TextView somerandomText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class UIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ui);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -35,11 +36,16 @@ public class UIActivity extends AppCompatActivity {
             }
         });
         TaskCounter(undoneTaskCount);
-    }
 
-    protected void addList() {
-        somerandomText = (TextView) findViewById(R.id.textcomebackhere);
-        somerandomText.setText(newtask_String);
+        ArrayList<ToDoData> todoArrayList = new ArrayList<>();
+        todoArrayList.add(new ToDoData("Do this"));
+        todoArrayList.add(new ToDoData("Do that"));
+        todoArrayList.add(new ToDoData("Do all"));
+        todoArrayList.add(new ToDoData("Do everything"));
+
+        CustomArrayAdapter customArrayAdapter = new CustomArrayAdapter(this,todoArrayList);
+        ListView content_UI = (ListView) findViewById(R.id.content_ui);
+        content_UI.setAdapter(customArrayAdapter);
     }
 
     protected void createNewTask(){
@@ -55,7 +61,6 @@ public class UIActivity extends AppCompatActivity {
                         newtask_String = newtask_String.trim();
                         if (newtask_String.length() != 0){
                             Toast.makeText(UIActivity.this,"New task added",Toast.LENGTH_LONG).show();
-                            addList();
                         }
                     }
                 })
