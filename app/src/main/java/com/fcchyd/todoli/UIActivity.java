@@ -19,6 +19,8 @@ public class UIActivity extends AppCompatActivity {
 
     int undoneTaskCount = 5;
     protected String newtask_String;
+    protected ArrayList<ToDoData> todoArrayList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,6 @@ public class UIActivity extends AppCompatActivity {
         });
         TaskCounter(undoneTaskCount);
 
-        ArrayList<ToDoData> todoArrayList = new ArrayList<>();
         todoArrayList.add(new ToDoData("Do this"));
         todoArrayList.add(new ToDoData("Do that"));
         todoArrayList.add(new ToDoData("Do all"));
@@ -61,6 +62,8 @@ public class UIActivity extends AppCompatActivity {
                         newtask_String = newtask_String.trim();
                         if (newtask_String.length() != 0){
                             Toast.makeText(UIActivity.this,"New task added",Toast.LENGTH_LONG).show();
+                            todoArrayList.add(new ToDoData(newtask_String));
+
                         }
                     }
                 })
@@ -79,6 +82,8 @@ public class UIActivity extends AppCompatActivity {
             this.setTitle(undoneTaskCount + " Pending Tasks");
         }
     }
+
+
 
 
 }
