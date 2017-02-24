@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import java.util.ArrayList;
 
 public class CustomArrayAdapter extends ArrayAdapter<ToDoData> {
+    ArrayAdapter<ToDoData> todoDatum;
 
     public CustomArrayAdapter(Context context, ArrayList<ToDoData> todoDatum) {
         super(context, 0, todoDatum);
@@ -20,9 +21,10 @@ public class CustomArrayAdapter extends ArrayAdapter<ToDoData> {
     @Override
     public View getView(int position, View listViewItem, ViewGroup parent) {
         if (listViewItem == null) {
-            listViewItem = LayoutInflater.from(getContext()).inflate(R.layout.row_todo, null);
+            listViewItem = LayoutInflater.from(getContext()).inflate(R.layout.row_todo, parent, false);
         }
         ToDoData currentRow = getItem(position);
+
         CheckBox taskChecker = (CheckBox) listViewItem.findViewById(R.id.text_todo_checkbox);
         taskChecker.setText(currentRow.getTodoText());
 
