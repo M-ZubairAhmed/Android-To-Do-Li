@@ -1,7 +1,6 @@
 package com.fcchyd.todoli;
 
 import android.content.DialogInterface;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -12,9 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -87,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         newtask_String = addNewTask_Edittext.getText().toString();
         newtask_String = newtask_String.trim();
         if (newtask_String.length() != 0){
-            Toast.makeText(MainActivity.this, "New task added", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "New task added", Toast.LENGTH_SHORT).show();
             todoArrayList.add(new ToDoData(newtask_String));
 //                            Collections.reverse(todoArrayList);
             customArrayAdapter.notifyDataSetChanged();
@@ -96,21 +93,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void TaskCounter(int taskCounter) {
+    public void TaskCounter(int taskCounter) {
         if (taskCounter == 0) {
             this.setTitle("You are all done!");
+
         } else if (taskCounter == 1) {
-            this.setTitle(taskCounter + " Pending Task");
+            this.setTitle("" + taskCounter + " Pending Task");
+
         } else {
-            this.setTitle(taskCounter + " Pending Tasks");
+            this.setTitle("" + taskCounter + " Pending Tasks");
+
         }
     }
-
+/*
     public void deletebutton_xml(View view){
-        taskCounter--;
-        TaskCounter(taskCounter);
         View parent = (View) view.getParent();
         CheckBox checkBox = (CheckBox) parent.findViewById(R.id.text_todo_checkbox);
+        if (!checkBox.isChecked()) {
+            taskCounter--;
+        }
+        TaskCounter(taskCounter);
         String a = String.valueOf(checkBox.getText());
         for (ToDoData X : todoArrayList) {
             if (X.getTodoText().equals(a)){
@@ -120,28 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-    }
-
-    protected void checkbutton_onclick_xml(View view){
-        View parent = (View) view.getParent();
-        CheckBox checkBox = (CheckBox) parent.findViewById(R.id.text_todo_checkbox);
-        if (!checkBox.isChecked()){
-            checkBox.setChecked(false);
-            Toast.makeText(MainActivity.this,"1",Toast.LENGTH_SHORT).show();
-            taskCounter++;
-            TaskCounter(taskCounter);
-            checkBox.setPaintFlags(0);
-        }
-        else{
-            checkBox.setChecked(true);
-            Toast.makeText(MainActivity.this,"2",Toast.LENGTH_SHORT).show();
-            taskCounter--;
-            TaskCounter(taskCounter);
-            checkBox.setPaintFlags(checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-
-        }
-    }
-
-
+    }*/
 
 }
+
