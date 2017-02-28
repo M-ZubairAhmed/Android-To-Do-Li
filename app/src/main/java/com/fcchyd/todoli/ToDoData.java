@@ -1,14 +1,28 @@
 package com.fcchyd.todoli;
 
-public class ToDoData {
+class ToDoData {
 
     private String todoText;
+    private boolean selected;
 
-    public ToDoData(String todoText){
+    ToDoData(String todoText){
+        this.todoText = todoText;
+        selected = false;
+    }
+
+    String getTodoText() {
+        return todoText;
+    }
+
+    void setTodoText(String todoText) {
         this.todoText = todoText;
     }
 
-    protected String getTodoText() {
-        return todoText;
+    boolean isSelected(){
+        return selected;
+    }
+
+    void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

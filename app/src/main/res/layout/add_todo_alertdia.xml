@@ -21,10 +21,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/alertdia_title"
+        android:focusableInTouchMode="true"
         android:layout_marginLeft="@dimen/alert_dialog_padmar"
         android:layout_marginRight="@dimen/alert_dialog_padmar"
         android:hint="@string/alertdialog_hint"
-        android:inputType="textMultiLine"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="text|textAutoCorrect|textAutoComplete"
+        android:imeActionLabel="Add"
+        android:imeOptions="actionGo"
         android:textColor="@color/colorSecondaryText" />
 
   <!--  <TextView
