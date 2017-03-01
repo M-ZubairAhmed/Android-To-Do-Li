@@ -55,11 +55,13 @@ public class CustomArrayAdapter extends ArrayAdapter<ToDoData> {
             });
             view.setTag(viewHolder);
             viewHolder.statusCheckBox.setTag(toDoDatum.get(position));
+            viewHolder.deleteButton.setTag(toDoDatum.get(position));
         } else {
             view = convertView;
             ((ViewHolder)view.getTag()).statusCheckBox.setTag(toDoDatum.get(position));
+            ((ViewHolder)view.getTag()).deleteButton.setTag(toDoDatum.get(position));
         }
-        ViewHolder holder = (ViewHolder) view.getTag();
+        final ViewHolder holder = (ViewHolder) view.getTag();
         //Get relevant text from array list.
         holder.statusCheckBox.setText(toDoDatum.get(position).getTodoText());
         //Get checked status from array list.
@@ -85,6 +87,7 @@ public class CustomArrayAdapter extends ArrayAdapter<ToDoData> {
             public void onClick(View v) {
                 toDoDatum.remove(toDoDatum.get(position));
                 notifyDataSetChanged();
+                holder.statusCheckBox.setSelected(true);
 
             }
         });
