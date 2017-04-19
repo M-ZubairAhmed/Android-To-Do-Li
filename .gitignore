@@ -38,3 +38,4 @@ Thumbs.db
 build/intermediates/dex-cache/cache.xml
 *.jar
 .idea/dictionaries/zub.xml
+*.rawproto
