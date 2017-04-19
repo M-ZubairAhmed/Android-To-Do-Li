@@ -1,4 +1,4 @@
-package com.fcchyd.todoli;
+package com.mastermindapps.todoli;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

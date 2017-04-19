@@ -1,4 +1,4 @@
-package com.fcchyd.todoli;
+package com.mastermindapps.todoli;
 
 class ToDoData {
 

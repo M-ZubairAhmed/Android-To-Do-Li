@@ -1,4 +1,4 @@
-package com.fcchyd.todoli;
+package com.mastermindapps.todoli;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
